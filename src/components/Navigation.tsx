@@ -11,7 +11,12 @@ const navItems = [
   { icon: Settings, label: 'Settings', href: '#settings' },
 ]
 
-export function Navigation() {
+interface NavigationProps {
+  user?: any
+  onNavigate?: (page: string) => void
+}
+
+export function Navigation({ user, onNavigate }: NavigationProps = {}) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (

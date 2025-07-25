@@ -1,65 +1,61 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --primary: 249 115 22;
-  --primary-foreground: 255 255 255;
-  --secondary: 244 244 245;
-  --secondary-foreground: 39 39 42;
-  --muted: 244 244 245;
-  --muted-foreground: 113 113 122;
-  --accent: 244 244 245;
-  --accent-foreground: 39 39 42;
-  --destructive: 239 68 68;
-  --destructive-foreground: 248 250 252;
-  --border: 228 228 231;
-  --input: 228 228 231;
-  --ring: 249 115 22;
-  --chart-1: 12 76 138;
-  --chart-2: 16 185 129;
-  --chart-3: 245 158 11;
-  --chart-4: 168 85 247;
-  --chart-5: 236 72 153;
+  --background: 0 0% 4%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 262 83% 58%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 64%;
+  --accent: 158 64% 52%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 262 83% 58%;
   --radius: 0.5rem;
-  
-  /* VibeAd Custom Colors */
-  --vibeAd-primary: 139 92 246;
-  --vibeAd-accent: 6 255 165;
-  --vibeAd-background: 10 10 10;
-  --vibeAd-dark: 17 17 17;
-  --vibeAd-surface: 24 24 27;
-  --vibeAd-border: 39 39 42;
-  --vibeAd-text: 250 250 250;
-  --vibeAd-text-muted: 161 161 170;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
 }
 
 .dark {
-  --background: 10 10 10;
-  --foreground: 250 250 250;
-  --card: 24 24 27;
-  --card-foreground: 250 250 250;
-  --popover: 24 24 27;
-  --popover-foreground: 250 250 250;
-  --primary: 139 92 246;
-  --primary-foreground: 255 255 255;
-  --secondary: 39 39 42;
-  --secondary-foreground: 250 250 250;
-  --muted: 39 39 42;
-  --muted-foreground: 161 161 170;
-  --accent: 39 39 42;
-  --accent-foreground: 250 250 250;
-  --destructive: 220 38 38;
-  --destructive-foreground: 250 250 250;
-  --border: 39 39 42;
-  --input: 39 39 42;
-  --ring: 139 92 246;
-  --chart-1: 220 70 100;
-  --chart-2: 160 100 100;
-  --chart-3: 30 80 100;
-  --chart-4: 280 100 100;
-  --chart-5: 340 100 100;
+  --background: 0 0% 4%;
+  --foreground: 0 0% 98%;
+  --card: 0 0% 4%;
+  --card-foreground: 0 0% 98%;
+  --popover: 0 0% 4%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 262 83% 58%;
+  --primary-foreground: 0 0% 98%;
+  --secondary: 0 0% 15%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 64%;
+  --accent: 158 64% 52%;
+  --accent-foreground: 0 0% 9%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 262 83% 58%;
+  --radius: 0.5rem;
+  --chart-1: 12 76% 61%;
+  --chart-2: 173 58% 39%;
+  --chart-3: 197 37% 24%;
+  --chart-4: 43 74% 66%;
+  --chart-5: 27 87% 67%;
 }
 
 * {
@@ -67,55 +63,47 @@
 }
 
 body {
-  background-color: hsl(var(--vibeAd-background));
-  color: hsl(var(--vibeAd-text));
-  font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
+  color: hsl(var(--foreground));
+  background: hsl(var(--background));
+  font-feature-settings: "rlig" 1, "calt" 1;
 }
 
-/* Custom scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: hsl(var(--vibeAd-dark));
-}
-
-::-webkit-scrollbar-thumb {
-  background: hsl(var(--vibeAd-border));
-  border-radius: 3px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: hsl(var(--vibeAd-primary) / 0.7);
-}
-
-/* Comet animation */
-@keyframes comet {
-  0% {
-    transform: translateX(-100px) translateY(-100px) rotate(45deg);
-    opacity: 0;
-  }
-  10% {
-    opacity: 1;
-  }
-  90% {
-    opacity: 1;
-  }
-  100% {
-    transform: translateX(calc(100vw + 100px)) translateY(calc(100vh + 100px)) rotate(45deg);
-    opacity: 0;
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
   }
 }
 
+/* Custom VibeAd Styles */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass {
+  background: hsl(0deg 0% 100% / 5%);
+  backdrop-filter: blur(10px);
+  border: 1px solid hsl(0deg 0% 100% / 10%);
+}
+
+.glow-hover {
+  transition: all 0.3s ease;
+}
+
+.glow-hover:hover {
+  box-shadow: 0 0 20px hsl(var(--primary) / 50%);
+}
+
+/* Comet Animation */
 .comet {
   position: absolute;
   width: 2px;
   height: 2px;
-  background: linear-gradient(45deg, hsl(var(--vibeAd-accent)), transparent);
+  background: linear-gradient(45deg, hsl(var(--primary)), hsl(var(--accent)));
   border-radius: 50%;
-  animation: comet linear infinite;
+  opacity: 0%;
+  animation: comet-fall 8s linear infinite;
 }
 
 .comet::before {
@@ -123,47 +111,93 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  width: 20px;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  border-radius: inherit;
+  box-shadow: 
+    0 0 6px hsl(var(--primary)),
+    0 0 12px hsl(var(--primary)),
+    0 0 18px hsl(var(--primary));
+}
+
+.comet::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -50px;
+  width: 50px;
   height: 1px;
-  background: linear-gradient(90deg, hsl(var(--vibeAd-accent)), transparent);
-  transform: translateX(-20px) translateY(0.5px);
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 80%), transparent);
 }
 
-/* Gradient text */
-.gradient-text {
-  background: linear-gradient(135deg, hsl(var(--vibeAd-primary)), hsl(var(--vibeAd-accent)));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+@keyframes comet-fall {
+  0% {
+    opacity: 0%;
+    transform: translateY(-100vh) translateX(0);
+  }
+
+  10% {
+    opacity: 100%;
+  }
+
+  90% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+    transform: translateY(100vh) translateX(-200px);
+  }
 }
 
-/* Glass effect */
-.glass {
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+/* Staggered animation delays */
+.comet:nth-child(1) { 
+  animation-delay: 0s; 
+  left: 10%; 
 }
 
-/* Button hover effects */
-.btn-primary {
-  background: linear-gradient(135deg, hsl(var(--vibeAd-primary)), hsl(var(--vibeAd-primary) / 0.8));
-  transition: all 0.3s ease;
+.comet:nth-child(2) { 
+  animation-delay: 1s; 
+  left: 20%; 
 }
 
-.btn-primary:hover {
-  background: linear-gradient(135deg, hsl(var(--vibeAd-primary) / 0.9), hsl(var(--vibeAd-primary) / 0.7));
-  transform: translateY(-1px);
-  box-shadow: 0 10px 25px hsl(var(--vibeAd-primary) / 0.3);
+.comet:nth-child(3) { 
+  animation-delay: 2s; 
+  left: 30%; 
 }
 
-.btn-accent {
-  background: linear-gradient(135deg, hsl(var(--vibeAd-accent)), hsl(var(--vibeAd-accent) / 0.8));
-  color: hsl(var(--vibeAd-background));
-  transition: all 0.3s ease;
+.comet:nth-child(4) { 
+  animation-delay: 3s; 
+  left: 40%; 
 }
 
-.btn-accent:hover {
-  background: linear-gradient(135deg, hsl(var(--vibeAd-accent) / 0.9), hsl(var(--vibeAd-accent) / 0.7));
-  transform: translateY(-1px);
-  box-shadow: 0 10px 25px hsl(var(--vibeAd-accent) / 0.3);
+.comet:nth-child(5) { 
+  animation-delay: 4s; 
+  left: 50%; 
+}
+
+.comet:nth-child(6) { 
+  animation-delay: 5s; 
+  left: 60%; 
+}
+
+.comet:nth-child(7) { 
+  animation-delay: 6s; 
+  left: 70%; 
+}
+
+.comet:nth-child(8) { 
+  animation-delay: 7s; 
+  left: 80%; 
+}
+
+.comet:nth-child(9) { 
+  animation-delay: 0.5s; 
+  left: 15%; 
+}
+
+.comet:nth-child(10) { 
+  animation-delay: 1.5s; 
+  left: 25%; 
 }

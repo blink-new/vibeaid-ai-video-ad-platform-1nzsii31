@@ -22,7 +22,12 @@ const features = [
   },
 ]
 
-export function Hero() {
+interface HeroProps {
+  onGetStarted?: () => void
+  onCloneURL?: () => void
+}
+
+export function Hero({ onGetStarted, onCloneURL }: HeroProps = {}) {
   return (
     <div className="relative min-h-screen flex items-center justify-center pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
@@ -78,7 +83,10 @@ export function Hero() {
                   placeholder="Paste any URL (LinkedIn post, landing page, etc.)"
                   className="flex-1 bg-gray-800/50 border-gray-600 text-white placeholder-gray-400"
                 />
-                <Button className="bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700 px-8">
+                <Button 
+                  onClick={onCloneURL}
+                  className="bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700 px-8"
+                >
                   Clone & Edit
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>
@@ -97,6 +105,7 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.8 }}
           >
             <Button
+              onClick={onGetStarted}
               size="lg"
               className="bg-gradient-to-r from-purple-500 to-violet-600 hover:from-purple-600 hover:to-violet-700 px-8 py-3 text-lg glow-hover"
             >
