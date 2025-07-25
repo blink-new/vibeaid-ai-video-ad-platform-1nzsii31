@@ -17,8 +17,8 @@ export function CometBackground() {
       id: i,
       delay: Math.random() * 10,
       duration: 15 + Math.random() * 10,
-      startX: Math.random() * window.innerWidth,
-      startY: Math.random() * window.innerHeight,
+      startX: Math.random() * (typeof window !== 'undefined' ? window.innerWidth : 1400),
+      startY: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
     }));
 
     setComets(initialComets);
@@ -31,7 +31,7 @@ export function CometBackground() {
           delay: 0,
           duration: 15 + Math.random() * 10,
           startX: -100,
-          startY: Math.random() * window.innerHeight,
+          startY: Math.random() * (typeof window !== 'undefined' ? window.innerHeight : 800),
         };
         
         // Keep only recent comets to prevent memory leaks
